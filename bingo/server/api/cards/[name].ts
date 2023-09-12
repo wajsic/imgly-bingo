@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 
-const db = {
+const db: any = {
   "players": [
       "AleG",
       "AleS",
@@ -225,7 +225,7 @@ export default defineEventHandler((event) => {
   if(!found) return createError({statusCode: 404, message: "user not found"});
     
   return {
-    cards: getUserCards(db.bingo, user)
+    cards: getUserCards(db.bingo, user.toLowerCase())
   };
 
 });
