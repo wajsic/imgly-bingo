@@ -1,6 +1,8 @@
 <script setup>
 
-
+useHead({
+    title: "IMG.LY  BINGO"
+})
 
 const name = ref("")
 const cards = ref([])
