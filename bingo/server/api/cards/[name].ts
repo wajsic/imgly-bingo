@@ -177,7 +177,6 @@ const db = {
       "AirPods Now Speak Multiple Languages",
       "Craig Federighi Virtual Hug"
     ]
-    
 }
 
 
@@ -216,8 +215,8 @@ function getUserCards(cards: String, user: any) {
 
 export default defineEventHandler((event) => {
   
-  const db = JSON.parse(fs.readFileSync(path.resolve('db.json'), 'utf-8'));
-  if(!db) return createError({statusCode: 500, message: "internal server error"});
+  // const db = JSON.parse(fs.readFileSync(path.resolve('db.json'), 'utf-8'));
+  // if(!db) return createError({statusCode: 500, message: "internal server error"});
 
   let user = event.context.params?.name;
   if(!user) return createError({statusCode: 400, message: "bad request"});
