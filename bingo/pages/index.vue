@@ -51,17 +51,20 @@ const isOneOfActives = (card) => {
     <div class="text-center bg-gray-800 ">
         <div class="w-full flex flex-col min-h-screen gap-4 p-10 " :class="{ 'justify-center': cards.length == 0 }" >
             <template v-if="cards.length == 0">
-                <h1 class="text-4xl font-bold mt-4 text-white">IMG.LY</h1>
-                <h2 class="text-3xl font-bold text-white">Apple Bingo</h2>
-                <input type="text" class="border-2 border-gray-300 p-2 rounded-lg" placeholder="Enter your name" v-model="name">
+                <img class="max-h-10" src="@/assets/logo_white.svg"/>
+                <h2 class="text-3xl font-black text-white"> B I N G O</h2>
+                <input type="text" class="border-2 border-gray-300 p-2 rounded-lg" placeholder="Your bingo code" v-model="name">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="startGame">Start Game</button>
             </template>
             <template v-else>
                 <div class="flex flex-col gap-4">
-                    <h1 class="text-4xl font-bold text-white ">IMG.LY</h1>
-                    <h2 class="text-3xl font-bold text-white">Apple Bingo</h2>
-                    <h3 class="text-2xl font-bold text-white">Welcome {{name}}</h3>
-                    <div class="flex flex-col gap-4 mt-4">
+                    <div class="grid grid-cols-[auto_auto_auto] items-center max-w-full">
+                        <h2 class="text-3xl font-black text-white text-left"> B I N G O</h2>
+                        <div></div>
+                        <img class="max-h-8" src="@/assets/logo_white.svg"/>
+                    </div>
+                    <h3 class="text-2xl font-light text-white text-left opacity-40">YOUR CODE: {{name}}</h3>
+                    <div class="flex flex-col gap-4 mt-2">
                         <template v-for="card in cards">
                             <div :class="isOneOfActives(card) ? 'bg-green-500' : 'bg-white'" class="shadow-md rounded-lg p-4">
                                 <h3 class="text-xl font-bold"  :class="{'text-white': isOneOfActives(card)}">{{card}}</h3>
